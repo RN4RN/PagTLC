@@ -1,0 +1,239 @@
+Sistema de Venta de Ropa: Propuesta Detallada
+El sistema se dividirá en dos interfaces principales:
+Panel de Administración (Backend/Admin): Para el dueño de la tienda.
+Tienda en Línea (Frontend/Cliente): Para los compradores.
+1. Panel de Administración (Dueño de la Tienda)
+Este panel permitirá al administrador gestionar todos los aspectos de la tienda.
+1.1. Autenticación Segura:
+Login/Logout para el administrador.
+Posibilidad de recuperar contraseña.
+1.2. Gestión de Productos:
+Crear/Editar Productos:
+Nombre del producto: Texto.
+Descripción detallada: Editor de texto enriquecido (WYSIWYG).
+Precio base: Numérico.
+Fotos: Carga múltiple de imágenes por producto (con opción de imagen principal y galería).
+Categoría: Selección de una categoría existente (ej: Zapatillas, Polos, Abrigos).
+Tipo de Prenda: Selección (Niño, Adulto, Unisex) – Esto puede filtrar las tallas disponibles.
+Activación/Desactivación: Switch para mostrar/ocultar el producto en la tienda.
+Gestión de Variantes (Color/Talla/Stock):
+Para cada producto, poder añadir múltiples combinaciones de:
+Color: Selección de colores predefinidos o añadir nuevos.
+Talla: Selección de tallas predefinidas (filtradas por tipo de prenda Niño/Adulto).
+Cantidad Disponible (Stock): Numérico para cada variante (ej: Polo Rojo Talla M - 10 unidades).
+SKU (Opcional): Código único para cada variante.
+Precio Específico por Variante (Opcional): Si una talla/color específico tiene un precio diferente.
+1.3. Gestión de Categorías:
+Crear, editar, eliminar categorías (ej: Zapatillas, Polos, Sudaderas, Lencería).
+1.4. Gestión de Tallas:
+Crear, editar, eliminar tallas (ej: S, M, L, XL, 30, 32).
+Asociar tallas a un tipo (Niño, Adulto, General).
+1.5. Gestión de Colores:
+Crear, editar, eliminar colores (ej: Rojo, Azul, Negro) con selector de color opcional.
+1.6. Gestión de Pedidos:
+Listado de Pedidos: Ver todos los pedidos con filtros (por estado, fecha, cliente).
+Detalle del Pedido: Ver información del cliente, productos comprados, cantidades, total, método de pago.
+Actualizar Estado del Pedido: (Pendiente, Pago Confirmado, Procesando, Enviado, Entregado, Cancelado).
+Ver Comprobantes de Pago: Visualizar/descargar comprobantes subidos por clientes (Yape/Plin).
+Confirmación Manual de Pago: Opción para marcar un pago como recibido (especialmente para WhatsApp o transferencias directas).
+1.7. Gestión de Clientes (Usuarios):
+Ver lista de clientes registrados.
+Ver historial de pedidos por cliente.
+(Opcional) Posibilidad de editar datos básicos o desactivar cuentas.
+1.8. Configuración de Métodos de Pago:
+Activar/desactivar métodos de pago:
+Tarjeta BCP: (Implica integración con una pasarela o instrucciones claras para transferencia).
+Yape: Instrucciones y número de Yape.
+Plin: Instrucciones y número de Plin.
+Contacto por WhatsApp: Número de WhatsApp para coordinación.
+Ingresar detalles/instrucciones para cada método de pago activo.
+1.9. Estadísticas y Reportes:
+Ventas: Total de ventas por período (día, semana, mes).
+Productos Más Vendidos: Ranking de productos por cantidad vendida o ingresos.
+Niveles de Stock Bajos: Alertas para productos con poco stock.
+1.10. Gestión de Reseñas:
+Ver reseñas dejadas por los clientes.
+Aprobar o rechazar reseñas antes de que se publiquen.
+1.11. Notificaciones del Administrador:
+Notificaciones en el panel (y opcionalmente por email/push) para:
+Nuevo pedido recibido.
+Nuevo comprobante de pago subido.
+Niveles de stock críticos.
+2. Tienda en Línea (Cliente/Comprador)
+Interfaz pública donde los clientes navegan y compran.
+2.1. Navegación y Visualización de Productos:
+Página de Inicio: Productos destacados, novedades, ofertas.
+Listado de Productos:
+Filtrar por Categoría.
+Filtrar por Talla (general y específica Niño/Adulto).
+Filtrar por Color, Precio (rango).
+Ordenar por popularidad, precio, novedades.
+Página de Detalle del Producto:
+Nombre, descripción completa.
+Galería de fotos del producto (con zoom).
+Precio.
+Selección de Talla y Color (mostrando disponibilidad).
+Cantidad a añadir al carrito.
+Botón "Añadir al carrito".
+Productos relacionados.
+Sección de reseñas del producto.
+Buscador de Productos: Búsqueda por palabra clave.
+2.2. Carrito de Compras:
+Ver productos añadidos, cantidad, precio unitario, subtotal.
+Modificar cantidad de productos.
+Eliminar productos del carrito.
+Resumen del total del pedido.
+Botón "Proceder al Pago / Checkout".
+2.3. Proceso de Checkout:
+Paso 1: Identificación/Registro:
+Opción de comprar como invitado (con datos mínimos).
+Login para clientes existentes.
+Registro para nuevos clientes.
+Paso 2: Información de Envío y Facturación:
+Formulario para dirección de envío (si aplica).
+Formulario para datos de facturación.
+Paso 3: Selección de Método de Pago:
+Mostrar los métodos de pago activados por el administrador:
+Tarjeta BCP: Si es una pasarela, redirigir. Si es transferencia, mostrar datos bancarios.
+Yape/Plin: Mostrar número/código QR e instrucciones. Opción para subir comprobante de pago (imagen/PDF).
+Contacto por WhatsApp: Mostrar número y un mensaje para coordinar el pago manualmente.
+Paso 4: Confirmación del Pedido:
+Resumen final del pedido (productos, total, dirección, método de pago).
+Botón "Realizar Pedido / Pagar".
+2.4. Cuenta de Usuario (Cliente Registrado):
+Login/Logout.
+Mis Pedidos: Ver historial de pedidos, estado de cada pedido.
+Mis Datos Personales: Ver y editar información personal, direcciones.
+Mis Reseñas: Ver las reseñas que ha realizado.
+(Opcional) Lista de deseos.
+2.5. Confirmaciones y Notificaciones al Cliente:
+Email de Confirmación de Pedido: Automático al realizar un pedido, con el resumen y los pasos a seguir según el método de pago.
+Email/Notificación de Confirmación de Pago: Cuando el administrador confirma el pago.
+Email/Notificación de Envío: Cuando el pedido es enviado (con número de seguimiento si aplica).
+(Opcional) Notificación por WhatsApp: Para confirmación de pedido o pago, si se integra con WhatsApp API.
+2.6. Reseñas de Productos:
+Los clientes que han comprado un producto pueden dejar una calificación (estrellas) y un comentario.
+3. Estructura de Datos (Tablas/Entidades Lógicas Principales)
+Usuarios (Users):
+id (PK)
+nombre, apellido, email (único), password_hash, telefono
+rol (ENUM: 'admin', 'cliente')
+direccion_principal (opcional, texto o referencia a tabla de direcciones)
+fecha_registro, ultima_conexion
+Categorias (Categories):
+id (PK)
+nombre (único)
+descripcion (opcional)
+slug (para URL amigable)
+Colores (Colors):
+id (PK)
+nombre (ej: Rojo, Azul Marino)
+codigo_hex (opcional, ej: #FF0000)
+Tallas (Sizes):
+id (PK)
+nombre_talla (ej: S, M, L, 38, 40, "2 años")
+tipo_talla (ENUM: 'adulto_ropa', 'adulto_calzado', 'niño_ropa', 'niño_calzado', 'general')
+Productos (Products):
+id (PK)
+nombre, descripcion_larga (texto enriquecido)
+precio_base
+categoria_id (FK a Categorias)
+tipo_prenda (ENUM: 'niño', 'adulto', 'unisex')
+activo (Booleano, para mostrar/ocultar)
+fecha_creacion, fecha_actualizacion
+slug (para URL amigable)
+FotosProducto (ProductPhotos):
+id (PK)
+producto_id (FK a Productos)
+url_imagen
+es_principal (Booleano)
+orden (para galería)
+VariantesProducto (ProductVariants o Inventory):
+id (PK)
+producto_id (FK a Productos)
+color_id (FK a Colores, opcional si el producto no tiene variantes de color)
+talla_id (FK a Tallas, opcional si el producto no tiene variantes de talla)
+sku (único, opcional)
+stock (cantidad disponible)
+precio_especifico (opcional, si esta variante tiene un precio diferente al precio_base del producto)
+Carrito (CartItems):
+id (PK)
+usuario_id (FK a Usuarios, puede ser nulo para invitados, o usar session_id)
+session_id (para invitados)
+varianteproducto_id (FK a VariantesProducto)
+cantidad
+fecha_agregado
+Pedidos (Orders):
+id (PK)
+usuario_id (FK a Usuarios, puede ser nulo si se permite compra como invitado)
+datos_cliente_invitado (JSON o campos separados si no hay usuario_id)
+fecha_pedido
+estado_pedido (ENUM: 'pendiente_pago', 'procesando_pago', 'pagado', 'en_preparacion', 'enviado', 'entregado', 'cancelado')
+total_pedido
+direccion_envio (texto o JSON)
+metodo_pago_id (FK a MetodosPagoConfig)
+notas_cliente (opcional)
+DetallePedidos (OrderItems):
+id (PK)
+pedido_id (FK a Pedidos)
+varianteproducto_id (FK a VariantesProducto)
+cantidad_comprada
+precio_unitario_en_compra (guarda el precio al momento de la compra)
+subtotal_item
+MetodosPagoConfig (PaymentMethods):
+id (PK)
+nombre_metodo (ej: Tarjeta BCP, Yape, Plin, WhatsApp)
+instrucciones_pago (texto para mostrar al cliente)
+datos_requeridos_admin (ej: Nro Yape/Plin, Nro Cuenta BCP)
+activo (Booleano)
+requiere_comprobante_subida (Booleano)
+logo_url (opcional)
+ComprobantesPago (PaymentProofs):
+id (PK)
+pedido_id (FK a Pedidos)
+url_archivo_comprobante
+fecha_subida
+estado_verificacion (ENUM: 'pendiente', 'aprobado', 'rechazado')
+notas_admin (opcional)
+Reseñas (Reviews):
+id (PK)
+producto_id (FK a Productos)
+usuario_id (FK a Usuarios)
+calificacion (Entero 1-5)
+comentario (Texto)
+fecha_reseña
+aprobada (Booleano, para moderación por el admin)
+NotificacionesAdmin (AdminNotifications):
+id (PK)
+tipo_notificacion (ENUM: 'nuevo_pedido', 'pago_recibido', 'comprobante_subido', 'stock_bajo')
+mensaje
+pedido_id (FK opcional a Pedidos)
+producto_id (FK opcional a Productos, para stock bajo)
+leida (Booleano)
+fecha_creacion
+4. Consideraciones Técnicas
+Stack Tecnológico:
+Frontend: HTML5, CSS3 (con un framework como Bootstrap o Tailwind CSS para responsividad), JavaScript (React, Vue.js, Angular, o Vanilla JS).
+Backend:
+PHP: Laravel, Symfony (recomendados por su robustez y ecosistema).
+Node.js: Express.js, NestJS.
+Python: Django, Flask.
+Ruby: Ruby on Rails.
+Base de Datos:
+SQL: PostgreSQL (recomendado por características avanzadas), MySQL/MariaDB (muy populares).
+NoSQL: MongoDB podría considerarse para ciertas partes, pero un RDBMS es generalmente más adecuado para e-commerce transaccional.
+Diseño Responsivo: Fundamental. El sistema debe adaptarse a ordenadores de escritorio, tablets y móviles.
+Usabilidad (UX/UI): Intuitivo tanto para el administrador como para el cliente. Procesos claros y sencillos.
+Seguridad:
+Protección contra XSS, CSRF, Inyección SQL.
+Contraseñas hasheadas.
+HTTPS (SSL/TLS) para toda la comunicación.
+Validación de datos en frontend y backend.
+Optimización de Imágenes: Compresión de imágenes para carga rápida sin perder calidad.
+SEO (Optimización para Motores de Búsqueda): URLs amigables, metaetiquetas, sitemap, buen rendimiento.
+Notificaciones por Email: Integración con servicios de email transaccional (SendGrid, Mailgun, Amazon SES) para asegurar la entrega.
+Integración WhatsApp:
+Manual: Enlaces wa.me para iniciar conversación.
+Automática: WhatsApp Business API (puede tener costos y requiere aprobación).
+Integración de Pagos:
+Tarjetas BCP: Si BCP ofrece una pasarela de pago directa para e-commerce (ej: Culqi, Izipay, Mercado Pago que trabajen con BCP), se integra vía API. Si no, se gestiona como transferencia manual.
